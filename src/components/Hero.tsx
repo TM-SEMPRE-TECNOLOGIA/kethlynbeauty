@@ -21,12 +21,14 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 space-y-7 text-center lg:text-left"
           >
-            {/* Editorial Eyebrow Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1B1514] text-white text-[11px] font-semibold tracking-[0.2em] uppercase shadow-sm">
-              <span className="text-[#DFC4A2]">★ 5.0 GOOGLE</span>
-              <span className="text-white/40">•</span>
-              <span className="text-white/90">STUDIO EM CAIEIRAS</span>
+            {/* Editorial Eyebrow Divider */}
+            <div className="flex items-center justify-center lg:justify-start gap-3">
+              <span className="w-10 h-[1.5px] bg-[#C5A880]" />
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#A6845B]">
+                Alta Retenção & Visagismo do Olhar
+              </p>
             </div>
+
 
             {/* Main Headline */}
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#1B1514] leading-[1.12]">
