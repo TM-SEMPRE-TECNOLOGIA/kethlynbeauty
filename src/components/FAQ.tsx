@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, MessageCircle } from 'lucide-react';
-import { faqData, siteConfig } from '../data/content';
+import { ChevronDown } from 'lucide-react';
+import { faqData } from '../data/content';
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -75,22 +75,6 @@ export const FAQ: React.FC = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Custom Question Box */}
-        <div className="mt-12 text-center p-6 rounded-2xl bg-white border border-[#C5A880]/30 shadow-sm">
-          <p className="text-xs sm:text-sm text-[#1B1514] font-medium mb-2">
-            Ainda tem alguma dúvida específica sobre o seu tipo de fio ou procedimento?
-          </p>
-          <a
-            href={siteConfig.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#A6845B] hover:text-[#1B1514] transition-colors"
-          >
-            <MessageCircle className="w-3.5 h-3.5" />
-            <span>Fale diretamente no WhatsApp →</span>
-          </a>
         </div>
 
       </div>
