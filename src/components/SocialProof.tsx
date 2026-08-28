@@ -85,8 +85,9 @@ export const SocialProof: React.FC = () => {
               <span className="text-[#C5A880] text-xl font-sans ml-1.5">★★★★★</span>
             </div>
             <p className="text-xs text-white/80 font-medium mt-1">Avaliação Máxima</p>
-            <p className="text-[11px] text-white/50 font-light mt-0.5">198 avaliações 100% positivas</p>
+            <p className="text-[11px] text-white/50 font-light mt-0.5">45 avaliações 5 estrelas</p>
           </div>
+
 
           {/* Metric 3 */}
           <div className="flex flex-col items-center lg:items-start lg:px-8">

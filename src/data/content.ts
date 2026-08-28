@@ -18,7 +18,7 @@ export const siteConfig = {
   googleMapsUrl: "https://maps.app.goo.gl/XTzhSTpWu2TW6HRz7",
   googleReviewsDirectUrl: "https://maps.app.goo.gl/XTzhSTpWu2TW6HRz7",
   googleRating: 5.0,
-  googleReviewCount: 198,
+  googleReviewCount: 45,
   
   // Real Local Assets
   logoImage: "/assets/logo.png",

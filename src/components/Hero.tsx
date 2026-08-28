@@ -21,19 +21,11 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 space-y-7 text-center lg:text-left"
           >
-            {/* Editorial Eyebrow Divider */}
-            <div className="flex items-center justify-center lg:justify-start gap-3">
-              <span className="w-10 h-[1.5px] bg-[#C5A880]" />
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#A6845B]">
-                Alta Retenção & Visagismo do Olhar
-              </p>
-            </div>
-
-
             {/* Main Headline */}
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#1B1514] leading-[1.12]">
               Realce a beleza <span className="font-serif italic font-semibold text-[#A6845B]">única do seu olhar</span> com sofisticação
             </h1>
+
 
             {/* Subheadline */}
             <p className="text-base sm:text-lg text-[#6E6764] max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
