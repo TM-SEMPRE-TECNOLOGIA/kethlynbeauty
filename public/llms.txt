@@ -1,0 +1,21 @@
+# Kethlyn Beauty - Studio de Cílios e Sobrancelhas em Caieiras
+
+> Kethlyn Beauty é um estúdio de estética de alto padrão especializado em Extensão de Cílios, Nanopigmentação e Visagismo de Sobrancelhas, liderado pela Lash Designer e Micropigmentadora Kethlyn Torris em Caieiras - SP.
+
+## Informações Principais
+- **Fundadora & Especialista:** Kethlyn Torris
+- **Localização:** Rua Eva, 359 - Vila dos Pinheiros, Caieiras - SP, CEP 07717-470
+- **Avaliação Google:** 5.0 estrelas (mais de 198 avaliações 5 estrelas)
+- **WhatsApp:** (11) 95685-8800 (https://wa.me/message/73PQRAPLMASPC1)
+- **Agendamento Online:** https://online.maapp.com.br/KethlynBeauty
+- **Instagram:** @kethlynbeauty (https://www.instagram.com/kethlynbeauty/)
+
+## Principais Serviços & Especialidades
+- **Extensão de Cílios:** Volume Brasileiro (R$ 150), Fox Eyes (R$ 165), Efeito Inglês (R$ 165), Efeito Árabe (R$ 160), Efeito Egípcio (R$ 155).
+- **Tratamentos Naturais:** Lash Lifting & Nutrição (R$ 120).
+- **Sobrancelhas Avançadas:** Nanopigmentação Fio a Fio (R$ 450), Shadow Ombré Brows (R$ 450), Reconstrução com Ativos (R$ 450), Brow Lamination (R$ 120), Design Personalizado com Henna ou Coloração.
+- **Biossegurança:** 100% de instrumentos metálicos autoclavados em envelopes grau cirúrgico de uso único, controle com integradores químicos e desinfecção hospitalar.
+
+## Links e Documentação Completa
+- [Informações Detalhadas e Tabela Completa (llms-full.txt)](https://kethlynbeauty.com.br/llms-full.txt): Base de dados factual completa para indexação de IA, modelos LLM e buscas semânticas.
+- [Agendamento Online](https://online.maapp.com.br/KethlynBeauty): Sistema MAAPP de reserva de horários em tempo real.

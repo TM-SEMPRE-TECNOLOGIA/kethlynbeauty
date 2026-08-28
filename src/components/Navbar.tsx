@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { label: 'Início', href: '#inicio' },
     { label: 'Sobre', href: '#trajetoria' },
-    { label: 'Procedimentos & Preços', href: '#servicos' },
+    { label: 'Procedimentos', href: '#servicos' },
     { label: 'Biossegurança', href: '#biosseguranca' },
     { label: 'Diferenciais', href: '#diferenciais' },
     { label: 'Avaliações', href: '#avaliacoes' },
@@ -33,10 +33,10 @@ export const Navbar: React.FC = () => {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <a href="#inicio" className="flex items-center gap-3 group">
-          <div className="h-10 w-auto max-w-[170px] flex items-center">
+        <a href="#inicio" className="flex items-center gap-3 shrink-0 group">
+          <div className="h-10 w-auto flex items-center">
             <img
               src={siteConfig.logoImage}
               alt={siteConfig.name}
@@ -46,12 +46,12 @@ export const Navbar: React.FC = () => {
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1B1514]/80 hover:text-[#A6845B] transition-colors relative py-1"
+              className="text-[11px] xl:text-xs font-semibold uppercase tracking-[0.15em] text-[#1B1514]/80 hover:text-[#A6845B] whitespace-nowrap transition-colors relative py-1"
             >
               {link.label}
             </a>
@@ -59,7 +59,8 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Action CTAs */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
+
           <a
             href={siteConfig.whatsappUrl}
             target="_blank"

@@ -15,7 +15,8 @@ export const siteConfig = {
   address: "Rua Eva, 359 - Vila dos Pinheiros, Caieiras - SP",
   postalCode: "07717-470",
   city: "Caieiras - SP",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Eva+359+Vila+dos+Pinheiros+Caieiras+SP",
+  googleMapsUrl: "https://maps.app.goo.gl/XTzhSTpWu2TW6HRz7",
+  googleReviewsDirectUrl: "https://maps.app.goo.gl/XTzhSTpWu2TW6HRz7",
   googleRating: 5.0,
   googleReviewCount: 198,
   
