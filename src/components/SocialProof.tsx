@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { Eye, Star, ShieldCheck, Clock, Check, ChevronRight } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { useInView, useMotionValue, useSpring } from 'framer-motion';
+import { Eye, Star, ShieldCheck, Clock } from 'lucide-react';
 
 interface AnimatedNumberProps {
   value: number;
@@ -35,244 +35,92 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({ value, prefix = '', suf
   return <span ref={ref}>{prefix}0{suffix}</span>;
 };
 
-interface SpotlightCardProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-const SpotlightCard: React.FC<SpotlightCardProps> = ({ children, className = '' }) => {
-  const divRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!divRef.current) return;
-    const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
-  return (
-    <div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setOpacity(1)}
-      onMouseLeave={() => setOpacity(0)}
-      className={`relative overflow-hidden rounded-2xl border border-brand-sand/80 bg-white/90 backdrop-blur-xl p-6 transition-all duration-300 hover:border-brand-gold hover:shadow-luxury-hover transform hover:-translate-y-1.5 ${className}`}
-    >
-      <div
-        className="pointer-events-none absolute -inset-px transition-opacity duration-300 rounded-2xl z-0"
-        style={{
-          opacity,
-          background: `radial-gradient(280px circle at ${position.x}px ${position.y}px, rgba(197, 168, 128, 0.22), rgba(223, 196, 162, 0.08), transparent 70%)`,
-        }}
-      />
-      <div className="relative z-10">{children}</div>
-    </div>
-  );
-};
-
 export const SocialProof: React.FC = () => {
   return (
-    <section className="py-14 sm:py-16 bg-brand-surface/70 border-y border-brand-sand/70 relative overflow-hidden">
-      {/* Ambient background glows */}
-      <div className="absolute -top-28 -left-28 w-72 h-72 bg-brand-goldLight/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-28 -right-28 w-72 h-72 bg-brand-gold/15 rounded-full blur-3xl pointer-events-none" />
+    <section className="bg-[#140F0E] text-white py-12 lg:py-16 border-y border-[#C5A880]/30 relative overflow-hidden">
+      {/* Subtle luxury ambient lighting */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#C5A880]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#C5A880]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-5 border-b border-brand-sand/80 gap-4">
-          <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-goldDark mb-1">
-              <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
-              Excelência & Autoridade Comprovada
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-brand-espresso">
-              Resultados de Alto Padrão em Caieiras
-            </h2>
+        {/* Top Eyebrow Header */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8 mb-8 border-b border-white/10 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#DFC4A2]">
+              Autoridade & Excelência Comprovada
+            </p>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-brand-goldLight/60 text-xs font-semibold text-brand-espresso shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Studio Aberto • Atendimento Exclusivo
-            </span>
-          </div>
+          <p className="text-xs text-white/60 font-light tracking-wide">
+            Studio Especializado em Extensões & Sobrancelhas • Caieiras - SP
+          </p>
         </div>
 
-        {/* Bento Grid 4 Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        {/* 4 Metrics Strip with Hairline Dividers */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-white/10">
           
-          {/* Card 1: +2.000 Olhares */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.05, duration: 0.5 }}
-          >
-            <SpotlightCard className="group h-full flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-brand-surface border border-brand-sand flex items-center justify-center text-brand-goldDark group-hover:scale-110 group-hover:bg-brand-espresso group-hover:text-brand-goldLight transition-all duration-300 shadow-sm">
-                    <Eye className="w-5 h-5" />
-                  </div>
-                  
-                  {/* Real Avatars Stack */}
-                  <div className="flex -space-x-2 group-hover:space-x-1 transition-all duration-300">
-                    <div className="w-7 h-7 rounded-full ring-2 ring-white bg-brand-gold flex items-center justify-center text-[10px] font-bold text-white shadow-sm overflow-hidden">
-                      <span className="font-serif">KT</span>
-                    </div>
-                    <div className="w-7 h-7 rounded-full ring-2 ring-white bg-brand-goldLight flex items-center justify-center text-[10px] font-bold text-brand-espresso shadow-sm">
-                      CR
-                    </div>
-                    <div className="w-7 h-7 rounded-full ring-2 ring-white bg-brand-espresso flex items-center justify-center text-[9px] font-bold text-brand-goldLight shadow-sm">
-                      +2k
-                    </div>
-                  </div>
-                </div>
+          {/* Metric 1 */}
+          <div className="flex flex-col items-center lg:items-start lg:px-8 first:pl-0">
+            <div className="flex items-center gap-2 mb-2 text-[#C5A880]">
+              <Eye className="w-4 h-4" />
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white/70">Atendimentos</span>
+            </div>
+            <div className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight flex items-baseline">
+              <span className="text-[#C5A880] mr-0.5">+</span>
+              <AnimatedNumber value={2000} />
+            </div>
+            <p className="text-xs text-white/80 font-medium mt-1">Olhares Transformados</p>
+            <p className="text-[11px] text-white/50 font-light mt-0.5">Visagismo e design sob medida</p>
+          </div>
 
-                <div className="font-serif text-4xl sm:text-5xl font-bold text-brand-espresso mb-1 flex items-baseline tracking-tight">
-                  <span className="text-brand-gold mr-0.5">+</span>
-                  <AnimatedNumber value={2000} />
-                </div>
-                
-                <div className="text-sm font-bold text-brand-espresso mb-1 group-hover:text-brand-goldDark transition-colors">
-                  Olhares Transformados
-                </div>
-                <p className="text-xs text-brand-muted leading-relaxed">
-                  Mapeamento visagista exclusivo respeitando cada traço facial.
-                </p>
-              </div>
+          {/* Metric 2 */}
+          <div className="flex flex-col items-center lg:items-start lg:px-8">
+            <div className="flex items-center gap-2 mb-2 text-[#C5A880]">
+              <Star className="w-4 h-4 fill-[#C5A880]" />
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white/70">Google Reviews</span>
+            </div>
+            <div className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight flex items-baseline">
+              <span>5.0</span>
+              <span className="text-[#C5A880] text-xl font-sans ml-1.5">★★★★★</span>
+            </div>
+            <p className="text-xs text-white/80 font-medium mt-1">Avaliação Máxima</p>
+            <p className="text-[11px] text-white/50 font-light mt-0.5">198 avaliações 100% positivas</p>
+          </div>
 
-              <div className="mt-4 pt-3 border-t border-brand-sand/80 flex items-center text-[11px] font-medium text-brand-goldDark gap-1 group-hover:translate-x-1 transition-transform">
-                <span>Atendimento 100% personalizado</span>
-                <ChevronRight className="w-3.5 h-3.5" />
-              </div>
-            </SpotlightCard>
-          </motion.div>
+          {/* Metric 3 */}
+          <div className="flex flex-col items-center lg:items-start lg:px-8">
+            <div className="flex items-center gap-2 mb-2 text-[#C5A880]">
+              <ShieldCheck className="w-4 h-4" />
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white/70">Biossegurança</span>
+            </div>
+            <div className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight flex items-baseline">
+              <AnimatedNumber value={100} />
+              <span className="text-[#C5A880] text-3xl font-sans ml-0.5">%</span>
+            </div>
+            <p className="text-xs text-white/80 font-medium mt-1">Instrumental Esterilizado</p>
+            <p className="text-[11px] text-white/50 font-light mt-0.5">Autoclave e kits cirúrgicos</p>
+          </div>
 
-          {/* Card 2: 5.0 Google */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.5 }}
-          >
-            <SpotlightCard className="group h-full flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-brand-surface border border-brand-sand flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-espresso group-hover:text-brand-goldLight transition-all duration-300 shadow-sm">
-                    <Star className="w-5 h-5 fill-brand-gold" />
-                  </div>
-
-                  {/* Google Verified Pill */}
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                    <Check className="w-3 h-3 text-emerald-600" />
-                    Google 5.0
-                  </span>
-                </div>
-
-                <div className="font-serif text-4xl sm:text-5xl font-bold text-brand-espresso mb-1 flex items-baseline tracking-tight">
-                  <span>5.0</span>
-                  <div className="flex text-brand-gold text-sm ml-2.5 tracking-tight group-hover:scale-110 transition-transform origin-left">
-                    ★★★★★
-                  </div>
-                </div>
-                
-                <div className="text-sm font-bold text-brand-espresso mb-1 group-hover:text-brand-goldDark transition-colors">
-                  Avaliação Máxima
-                </div>
-                <p className="text-xs text-brand-muted leading-relaxed">
-                  198 avaliações reais e espontâneas com satisfação unânime.
-                </p>
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-brand-sand/80 flex items-center text-[11px] font-medium text-emerald-700 gap-1">
-                <span>100% de recomendação no Google</span>
-              </div>
-            </SpotlightCard>
-          </motion.div>
-
-          {/* Card 3: 100% Biossegurança */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.25, duration: 0.5 }}
-          >
-            <SpotlightCard className="group h-full flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-brand-surface border border-brand-sand flex items-center justify-center text-brand-goldDark group-hover:scale-110 group-hover:bg-brand-espresso group-hover:text-brand-goldLight transition-all duration-300 shadow-sm">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-
-                  {/* Autoclave Badge */}
-                  <span className="inline-flex items-center text-[10px] font-bold uppercase tracking-wider text-brand-goldDark bg-brand-surface px-2.5 py-1 rounded-full border border-brand-sand">
-                    Autoclave
-                  </span>
-                </div>
-
-                <div className="font-serif text-4xl sm:text-5xl font-bold text-brand-espresso mb-1 flex items-baseline tracking-tight">
-                  <AnimatedNumber value={100} />
-                  <span className="text-brand-gold text-3xl font-sans ml-0.5">%</span>
-                </div>
-                
-                <div className="text-sm font-bold text-brand-espresso mb-1 group-hover:text-brand-goldDark transition-colors">
-                  Protocolo Estéril
-                </div>
-                <p className="text-xs text-brand-muted leading-relaxed">
-                  Envelopes cirúrgicos individuais abertos na sua presença.
-                </p>
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-brand-sand/80 flex items-center text-[11px] font-medium text-brand-goldDark gap-1">
-                <span>Normas ANVISA rigorosas</span>
-              </div>
-            </SpotlightCard>
-          </motion.div>
-
-          {/* Card 4: +30 Dias Retenção */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.35, duration: 0.5 }}
-          >
-            <SpotlightCard className="group h-full flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-brand-surface border border-brand-sand flex items-center justify-center text-brand-goldDark group-hover:scale-110 group-hover:bg-brand-espresso group-hover:text-brand-goldLight transition-all duration-300 shadow-sm">
-                    <Clock className="w-5 h-5" />
-                  </div>
-
-                  {/* Gauge Bar */}
-                  <div className="w-16 bg-brand-sand h-2 rounded-full overflow-hidden p-0.5" title="Retenção estendida">
-                    <div className="bg-gradient-to-r from-brand-gold to-brand-goldDark h-full rounded-full w-full" />
-                  </div>
-                </div>
-
-                <div className="font-serif text-4xl sm:text-5xl font-bold text-brand-espresso mb-1 flex items-baseline tracking-tight">
-                  <span className="text-brand-gold mr-0.5">+</span>
-                  <AnimatedNumber value={30} />
-                  <span className="text-xl font-sans ml-1 text-brand-goldDark">dias</span>
-                </div>
-                
-                <div className="text-sm font-bold text-brand-espresso mb-1 group-hover:text-brand-goldDark transition-colors">
-                  Alta Retenção
-                </div>
-                <p className="text-xs text-brand-muted leading-relaxed">
-                  Adesivos de nanotecnologia com isolamento milimétrico e leveza.
-                </p>
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-brand-sand/80 flex items-center text-[11px] font-medium text-brand-goldDark gap-1">
-                <span>Linha Mega & Tradicional</span>
-              </div>
-            </SpotlightCard>
-          </motion.div>
+          {/* Metric 4 */}
+          <div className="flex flex-col items-center lg:items-start lg:px-8 last:pr-0">
+            <div className="flex items-center gap-2 mb-2 text-[#C5A880]">
+              <Clock className="w-4 h-4" />
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white/70">Fixação</span>
+            </div>
+            <div className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight flex items-baseline">
+              <span className="text-[#C5A880] mr-0.5">+</span>
+              <AnimatedNumber value={30} />
+              <span className="text-lg font-sans ml-1 text-[#DFC4A2]">dias</span>
+            </div>
+            <p className="text-xs text-white/80 font-medium mt-1">Retenção Prolongada</p>
+            <p className="text-[11px] text-white/50 font-light mt-0.5">Linha Tradicional & Mega</p>
+          </div>
 
         </div>
+
       </div>
     </section>
   );
 };
+
