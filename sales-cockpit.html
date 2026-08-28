@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Cockpit - Cold Call Kethlyn Beauty (R$ 500)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-rose-500 selection:text-white">
+
+  <!-- TOP BAR -->
+  <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-4 lg:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center font-bold text-white shadow-lg shadow-rose-500/20">
+          <i class="fa-solid fa-headset text-sm"></i>
+        </div>
+        <div>
+          <h1 class="text-sm font-bold text-slate-100 flex items-center gap-2">
+            Cockpit de Vendas • Cold Call
+            <span class="text-xs bg-rose-500/20 text-rose-300 font-semibold px-2 py-0.5 rounded-full border border-rose-500/30">Alvo: R$ 500</span>
+          </h1>
+          <p class="text-xs text-slate-400">Cliente: <strong class="text-rose-300">Kethlyn Torris</strong> (Kethlyn Beauty • Caieiras/SP)</p>
+        </div>
+      </div>
+
+      <!-- TIMER & STATS -->
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+          <i class="fa-regular fa-clock text-rose-400 text-xs"></i>
+          <span id="call-timer" class="font-mono text-sm font-bold text-emerald-400">00:00</span>
+          <button id="btn-timer" onclick="toggleTimer()" class="text-xs bg-slate-700 hover:bg-slate-600 px-2 py-0.5 rounded text-slate-200 transition ml-1">
+            Iniciar
+          </button>
+        </div>
+        <a href="https://online.maapp.com.br/KethlynBeauty" target="_blank" class="hidden md:flex items-center gap-1.5 text-xs text-slate-400 hover:text-rose-300 transition">
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Link Maapp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN GRID -->
+  <main class="max-w-7xl mx-auto w-full p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1">
+
+    <!-- LEFT COLUMN: SCRIPT TELEPROMPTER (7 COLS) -->
+    <div class="lg:col-span-7 flex flex-col gap-4">
+
+      <!-- QUICK CLIENT CHEAT SHEET -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm">
+        <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center justify-between">
+          <span><i class="fa-solid fa-id-card mr-1.5 text-rose-400"></i> Raio-X Rápido (Seus Superpoderes)</span>
+          <span class="text-emerald-400 text-[10px] font-semibold"><i class="fa-solid fa-star text-amber-400 mr-0.5"></i> 5.0 Google (198 reviews)</span>
+        </div>
+        <div class="grid grid-cols-3 gap-2 text-xs">
+          <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80">
+            <span class="text-slate-500 block text-[10px]">Diferencial Chave:</span>
+            <span class="font-semibold text-rose-200">Autoclave & Biossegurança</span>
+          </div>
+          <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80">
+            <span class="text-slate-500 block text-[10px]">Serviço de Alto Valor:</span>
+            <span class="font-semibold text-amber-200">Nanopigmentação (R$ 450)</span>
+          </div>
+          <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80">
+            <span class="text-slate-500 block text-[10px]">Sua Oferta:</span>
+            <span class="font-bold text-emerald-400">Site Pronto: R$ 500</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCRIPT STEP BY STEP -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col gap-5 flex-1 shadow-lg">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <h2 class="text-sm font-bold text-slate-200 flex items-center gap-2">
+            <i class="fa-solid fa-microphone-lines text-rose-400"></i> Roteiro de Fala (Passo a Passo)
+          </h2>
+          <span class="text-xs text-slate-400 font-medium">Meta: 90 a 120 segundos</span>
+        </div>
+
+        <!-- PASSO 1 -->
+        <div class="space-y-2 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60 hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold text-rose-400 tracking-wide uppercase flex items-center gap-1.5">
+              <span class="w-5 h-5 rounded-full bg-rose-500/20 text-rose-300 flex items-center justify-center text-[10px]">1</span>
+              Abertura & Quebra de Padrão (15s)
+            </span>
+            <span class="text-[10px] text-slate-500">Tom: Confiante, amigável e calmo</span>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-200 font-medium pl-6">
+            "Oi, <strong>Kethlyn</strong>, tudo bem? Aqui é o <span class="text-rose-300 font-bold">[Seu Nome]</span>. Sei que posso estar te pegando no meio dos atendimentos aí no estúdio, então prometo ser super rápido, menos de um minuto. <strong>Pode falar rapidinho?</strong>"
+          </p>
+        </div>
+
+        <!-- PASSO 2 -->
+        <div class="space-y-2 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60 hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold text-amber-400 tracking-wide uppercase flex items-center gap-1.5">
+              <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-[10px]">2</span>
+              O Elogio de Autoridade + O Presente (30s)
+            </span>
+            <span class="text-[10px] text-slate-500">Gatilho: Curiosidade & Reconhecimento</span>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-200 font-medium pl-6">
+            "Kethlyn, eu acompanhei o seu trabalho aí em Caieiras, vi a sua nota <strong>5.0 no Google com quase 200 avaliações</strong> e o diferencial de <strong>biossegurança com autoclave</strong> que quase ninguém tem.<br><br>
+            Eu sou designer e desenvolvedor web e selecionei o seu estúdio para <strong class="text-amber-300">criar um projeto de site completo e exclusivo já pronto</strong> — com suas fotos de Fox Eyes, Nano, manutenções e o botão de agendamento online."
+          </p>
+        </div>
+
+        <!-- PASSO 3 -->
+        <div class="space-y-2 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60 hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold text-emerald-400 tracking-wide uppercase flex items-center gap-1.5">
+              <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-[10px]">3</span>
+              A Proposta e o Alívio de Preço (30s)
+            </span>
+            <span class="text-[10px] text-slate-500">Gatilho: Risco Zero & Oferta Simbólica</span>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-200 font-medium pl-6">
+            "Eu não estou te ligando para te vender um projeto caro de 3 mil reais ou te enrolar. O site já está pronto no ar. <br><br>
+            Quero apenas te enviar o link no seu WhatsApp agora para você ver como ficou. Se você gostar e achar que faz sentido para valorizar seu estúdio, a gente fecha por uma <strong>taxa única simbólica de R$ 500</strong> (sem mensalidade nenhuma de desenvolvimento).<br><br>
+            <strong class="text-emerald-300">Posso te mandar o link agora nesse WhatsApp para você dar uma olhada rápida?</strong>"
+          </p>
+        </div>
+
+        <!-- PASSO 4 -->
+        <div class="space-y-2 bg-slate-950/40 p-4 rounded-xl border border-slate-800/60 hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold text-indigo-400 tracking-wide uppercase flex items-center gap-1.5">
+              <span class="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center text-[10px]">4</span>
+              Fechamento da Ligação & Transição para o WhatsApp
+            </span>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-200 font-medium pl-6">
+            "Show de bola, Kethlyn! Já estou disparando a mensagem com o link para você. Dá uma olhada no celular quando tiver 2 minutinhos e me fala o que achou dos efeitos visuais. Um abraço e bom trabalho!"
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: INTERACTIVE OBJECTIONS & OPPORTUNITIES (5 COLS) -->
+    <div class="lg:col-span-5 flex flex-col gap-4">
+
+      <!-- OBJECTIONS CONTROLLER -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+          <h2 class="text-sm font-bold text-rose-300 flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-rose-400"></i> Botões de Objeção (Clique para a Resposta)
+          </h2>
+        </div>
+
+        <!-- OBJECTION BUTTONS -->
+        <div class="grid grid-cols-2 gap-2 mb-4">
+          <button onclick="showResponse('insta')" class="text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 hover:border-rose-500/50 transition">
+            📱 "Já tenho Instagram"
+          </button>
+          <button onclick="showResponse('caro')" class="text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 hover:border-rose-500/50 transition">
+            💸 "Sem verba / Tá caro"
+          </button>
+          <button onclick="showResponse('ocupada')" class="text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 hover:border-rose-500/50 transition">
+            ⏳ "Estou atendendo agora"
+          </button>
+          <button onclick="showResponse('mensalidade')" class="text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 hover:border-rose-500/50 transition">
+            🔄 "Tem mensalidade?"
+          </button>
+          <button onclick="showResponse('sempedir')" class="text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 hover:border-rose-500/50 transition">
+            🤔 "Como fez sem eu pedir?"
+          </button>
+          <button onclick="showResponse('nao_definitivo')" class="text-left text-xs bg-rose-950/50 hover:bg-rose-900/50 text-rose-200 p-2.5 rounded-xl border border-rose-800/60 hover:border-rose-500 transition">
+            🛑 Se ela disser "NÃO QUERO"
+          </button>
+        </div>
+
+        <!-- DYNAMIC RESPONSE BOX -->
+        <div id="response-box" class="bg-slate-950 p-4 rounded-xl border border-slate-800 min-h-[140px] flex flex-col justify-center">
+          <p class="text-xs text-slate-500 italic text-center">Clique em um dos botões acima quando a cliente trouxer uma dúvida ou objeção.</p>
+        </div>
+      </div>
+
+      <!-- OPPORTUNITIES & UPSELLS -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex-1">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+          <h2 class="text-sm font-bold text-emerald-300 flex items-center gap-2">
+            <i class="fa-solid fa-bolt-lightning text-amber-400"></i> Botões de Oportunidade & Upsell
+          </h2>
+        </div>
+
+        <div class="space-y-2">
+          <!-- OP: HOOK INDICAÇÃO -->
+          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-amber-300">🎯 Hook de Indicação (Antes de desligar)</span>
+              <button onclick="copyText('hook-ind')" class="text-[10px] text-slate-400 hover:text-white bg-slate-800 px-2 py-0.5 rounded">Copiar</button>
+            </div>
+            <p id="hook-ind" class="text-xs text-slate-300">
+              "Kethlyn, como eu seleciono apenas negócios de alto padrão por região, você tem alguma amiga dona de clínica ou salão aqui na região que você acha que também merecia um site desse nível?"
+            </p>
+          </div>
+
+          <!-- OP: TRAFEGO PAGO -->
+          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-indigo-300">📈 Se perguntar de Anúncios / Tráfego Pago</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              "Com certeza! O site é a base para o anúncio converter. Assim que o site estiver no ar, podemos criar uma campanha no Google e Instagram focada em mulheres de Caieiras procurando Nanopigmentação e Mega Volume."
+            </p>
+          </div>
+
+          <!-- OP: METRICA / ABANDONO -->
+          <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-rose-300">🔍 Pergunta Poderosa (Métrica & Abandono)</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              "Kethlyn, hoje você sabe quantas pessoas clicam no seu link e desistem antes de agendar? O site elimina essa perda porque mostra tudo com clareza imediata."
+            </p>
+          </div>
+        </div>
+
+        <!-- WHATSAPP MESSAGE CENTER -->
+        <div class="mt-4 pt-4 border-t border-slate-800 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-emerald-400"></i> Central de Mensagens WhatsApp
+            </span>
+            <span class="text-[10px] text-slate-500">1-clique para copiar</span>
+          </div>
+
+          <!-- INPUT DE LINK -->
+          <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 flex items-center gap-2">
+            <span class="text-[11px] text-slate-400 font-semibold whitespace-nowrap">Seu Link:</span>
+            <input type="text" id="site-link-input" value="https://kethlyn-beauty.vercel.app" placeholder="https://seu-link.vercel.app" class="bg-slate-900 text-rose-300 text-xs px-2.5 py-1.5 rounded-lg border border-slate-700 w-full focus:outline-none focus:border-rose-500 font-mono">
+          </div>
+
+          <!-- BOTOES DE COPIAR -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button onclick="copyLinkMessage()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/20 transition">
+              <i class="fa-solid fa-paper-plane text-xs"></i> Copiar Mensagem c/ Link
+            </button>
+
+            <button onclick="copyNegativeMessage()" class="w-full bg-slate-800 hover:bg-slate-700 text-rose-300 hover:text-rose-200 font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 border border-rose-500/30 hover:border-rose-500/60 shadow-lg transition">
+              <i class="fa-solid fa-hand-holding-heart text-xs"></i> Copiar Msg de Negativa
+            </button>
+          </div>
+
+          <!-- TOAST NOTIFICATION -->
+          <div id="toast-notify" class="hidden bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs p-2.5 rounded-xl text-center font-medium animate-fade-in">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> <span id="toast-text">Mensagem copiada para a área de transferência!</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Responses Dictionary
+    const responses = {
+      insta: `
+        <div class="space-y-1">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wide">📱 Resposta para "Já tenho Instagram":</div>
+          <p class="text-xs text-slate-200 leading-relaxed font-medium">
+            "Com certeza, Kethlyn! O seu Instagram é ótimo. O site não substitui o Insta, ele é o <strong>próximo nível de autoridade</strong>: quando alguém pesquisa no Google por cílios/nanopigmentação em Caieiras ou clica no link da sua bio, o site passa o ar de clínica de estética de luxo, o que ajuda a justificar os seus procedimentos de maior valor (como a Nanopigmentação de R$ 450)."
+          </p>
+        </div>
+      `,
+      caro: `
+        <div class="space-y-1">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wide">💸 Resposta para "Sem verba / Tá caro":</div>
+          <p class="text-xs text-slate-200 leading-relaxed font-medium">
+            "Eu super entendo! Por isso mesmo eu reduzi para R$ 500 (em agência normal custaria mais de R$ 2.500). Um único atendimento de Nanopigmentação (R$ 450) já paga 90% do site. E se preferir, a gente pode parcelar em <strong>3x ou 4x no cartão</strong>, que fica em torno de R$ 170/mês — menos que uma manutenção!"
+          </p>
+        </div>
+      `,
+      ocupada: `
+        <div class="space-y-1">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wide">⏳ Resposta para "Estou atendendo agora":</div>
+          <p class="text-xs text-slate-200 leading-relaxed font-medium">
+            "Totalmente compreensível, não quero te atrapalhar de jeito nenhum! Eu vou só te mandar o link no WhatsApp com 2 linhas. Que horas fica melhor eu te dar um alô para saber o que achou? Umas 18h ou 19h fica bom para você?"
+          </p>
+        </div>
+      `,
+      mensalidade: `
+        <div class="space-y-1">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wide">🔄 Resposta para "Tem mensalidade?":</div>
+          <p class="text-xs text-slate-200 leading-relaxed font-medium">
+            "<strong>Zero mensalidade comigo!</strong> A taxa de R$ 500 é única para entrega. A hospedagem fica configurada de forma gratuita e rápida. O único custo externo é o seu domínio oficial (.com.br no Registro.br, que custa R$ 40 por ano e fica registrado no seu CPF)."
+          </p>
+        </div>
+      `,
+      sempedir: `
+        <div class="space-y-1">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wide">🤔 Resposta para "Como fez sem eu pedir?":</div>
+          <p class="text-xs text-slate-200 leading-relaxed font-medium">
+            "Eu seleciono semanalmente apenas 1 ou 2 profissionais na região que já têm nota máxima e excelente reputação no Google para montar esse modelo de demonstração. Achei o seu estúdio impecável e achei que merecia um site à altura."
+          </p>
+        </div>
+      `,
+      nao_definitivo: `
+        <div class="space-y-1">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wide">🛑 O que dizer se ela disser um "NÃO" definitivo na ligação:</div>
+          <p class="text-xs text-slate-200 leading-relaxed font-medium">
+            "Sem problema nenhum, Kethlyn! Agradeço demais pela sua atenção. <strong>Posso apenas usar o modelo como exemplo de estudo de caso no meu portfólio visual?</strong> E se no futuro você quiser ativar ou precisar de alguma melhoria digital, meu contato continua aqui. Desejo muito sucesso com o estúdio!"
+          </p>
+          <span class="text-[10px] text-emerald-400 font-semibold block mt-1">✨ Benefício: Você mantém a porta aberta, ganha um portfólio impecável e deixa uma impressão de alto profissionalismo!</span>
+        </div>
+      `
+    };
+
+    function showResponse(key) {
+      const box = document.getElementById('response-box');
+      box.innerHTML = responses[key];
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notify');
+      const text = document.getElementById('toast-text');
+      text.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // WhatsApp Template Copy - Link Post-Call
+    function copyLinkMessage() {
+      const link = document.getElementById('site-link-input').value.trim() || 'https://kethlyn-beauty.vercel.app';
+      const text = `Olá, Kethlyn! Tudo bem? Aqui é o especialista que acabou de falar com você no telefone.
+
+Conforme conversamos, segue o link do projeto exclusivo que estruturei para a Kethlyn Beauty:
+👉 ${link}
+
+Destaques que já organizei no site:
+✨ Catálogo visual de Cílios (Volume Brasileiro, Fox Eyes, Efeito Inglês, Árabe) e Linha Mega
+✨ Seção de Nanopigmentação e Sobrancelhas de Alto Padrão
+✨ Bloco de Autoridade em Biossegurança (Autoclave e normas Anvisa)
+✨ Integração direta com seu Agendamento Online e WhatsApp
+✨ Destaque para a sua nota 5.0 no Google (198 avaliações)
+
+Dá uma olhadinha no celular quando puder e me conta o que achou! 😊`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Mensagem com o link copiada com sucesso!');
+      });
+    }
+
+    // WhatsApp Template Copy - Negative Response Handling
+    function copyNegativeMessage() {
+      const text = `Olá, Kethlyn! Super compreensível, imagino que a sua prioridade agora seja outra e respeito 100% o seu momento.
+
+Agradeço de coração pela atenção e simpatia no telefone!
+
+Como dediquei um carinho especial montando esse projeto para a Kethlyn Beauty, você me autoriza a manter o modelo no ar apenas como exemplo de estudo de caso no meu portfólio visual de estética?
+
+E claro: se no futuro você quiser colocar no seu domínio oficial ou precisar de alguma assessoria digital/anúncios, meu contato fica salvo com você.
+
+Desejo muito sucesso e agenda sempre cheia para você e seu estúdio! ✨🙌`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Mensagem de negativa / portfólio copiada com sucesso!');
+      });
+    }
+
+    function copyText(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+      showToast('Texto copiado!');
+    }
+
+    // Call Stopwatch Timer
+    let timerInterval = null;
+    let seconds = 0;
+
+    function toggleTimer() {
+      const btn = document.getElementById('btn-timer');
+      const display = document.getElementById('call-timer');
+
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        btn.innerText = 'Retomar';
+        btn.classList.remove('bg-rose-600');
+        btn.classList.add('bg-slate-700');
+      } else {
+        btn.innerText = 'Pausar';
+        btn.classList.remove('bg-slate-700');
+        btn.classList.add('bg-rose-600');
+        timerInterval = setInterval(() => {
+          seconds++;
+          const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+          const secs = String(seconds % 60).padStart(2, '0');
+          display.innerText = `${mins}:${secs}`;
+          if (seconds > 90 && seconds <= 120) {
+            display.classList.remove('text-emerald-400');
+            display.classList.add('text-amber-400');
+          } else if (seconds > 120) {
+            display.classList.remove('text-amber-400');
+            display.classList.add('text-rose-400');
+          }
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>
