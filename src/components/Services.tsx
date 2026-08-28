@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, ArrowRight, Eye, MessageCircle } from 'lucide-react';
+import { Clock, ArrowRight, Eye } from 'lucide-react';
 import { servicesData, siteConfig } from '../data/content';
 import { Service } from '../types';
 import { ServiceModal } from './ServiceModal';
@@ -168,25 +168,6 @@ export const Services: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* Editorial Assistance Callout Banner */}
-        <div className="mt-16 p-8 rounded-2xl bg-white border border-[#C5A880]/40 shadow-sm text-center space-y-4 max-w-2xl mx-auto">
-          <h3 className="font-serif text-xl font-bold text-[#1B1514]">
-            Dúvidas sobre qual o melhor procedimento para o seu olhar?
-          </h3>
-          <p className="text-xs sm:text-sm text-[#6E6764] font-light max-w-lg mx-auto">
-            Realizamos uma avaliação de visagismo personalizada antes de iniciar a aplicação para garantir naturalidade e harmonia.
-          </p>
-          <a
-            href={siteConfig.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1514] bg-[#FAF7F4] hover:bg-[#EFE8E2] border border-[#C5A880]/50 transition-colors"
-          >
-            <MessageCircle className="w-4 h-4 text-[#A6845B]" />
-            <span>Fazer Avaliação no WhatsApp</span>
-          </a>
-        </div>
 
       </div>
 
