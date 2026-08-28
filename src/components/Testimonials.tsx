@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { MessageCircle, ExternalLink } from 'lucide-react';
-import { siteConfig } from '../data/content';
 
 export const Testimonials: React.FC = () => {
   useEffect(() => {
@@ -46,32 +44,6 @@ export const Testimonials: React.FC = () => {
             className="elfsight-app-c5e4fa2a-10e0-4857-b292-b8c28f042fa3"
             data-elfsight-app-lazy
           />
-        </div>
-
-        {/* Dual Actions: Google Maps Profile & Instagram */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-          <a
-            href={siteConfig.googleMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#1B1514] hover:bg-[#A6845B] shadow-md transition-all active:scale-95"
-          >
-            <div className="w-4 h-4 rounded-full bg-white text-[#1B1514] flex items-center justify-center font-bold text-[10px]">
-              G
-            </div>
-            <span>Ver Perfil Oficial no Google</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#DFC4A2]" />
-          </a>
-
-          <a
-            href={siteConfig.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1514] bg-[#FAF7F4] hover:bg-[#EFE8E2] border border-[#EFE8E2] transition-all"
-          >
-            <MessageCircle className="w-4 h-4 text-[#A6845B]" />
-            <span>Acompanhar no Instagram {siteConfig.instagramHandle}</span>
-          </a>
         </div>
 
       </div>
