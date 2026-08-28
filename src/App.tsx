@@ -9,6 +9,7 @@ import { Services } from './components/Services';
 import { BiosafetyGallery } from './components/BiosafetyGallery';
 import { MethodDifferentials } from './components/MethodDifferentials';
 import { Testimonials } from './components/Testimonials';
+import { InstagramFeed } from './components/InstagramFeed';
 import { FAQ } from './components/FAQ';
 import { LocationCTA } from './components/LocationCTA';
 import { Footer } from './components/Footer';
@@ -31,6 +32,7 @@ export const App: React.FC = () => {
         <BiosafetyGallery />
         <MethodDifferentials />
         <Testimonials />
+        <InstagramFeed />
         <FAQ />
         <LocationCTA />
       </main>
