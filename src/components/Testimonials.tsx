@@ -1,19 +1,32 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Star, MessageCircle, Quote } from 'lucide-react';
-import { testimonialsData, siteConfig } from '../data/content';
+import React, { useEffect } from 'react';
+import { MessageCircle, ExternalLink } from 'lucide-react';
+import { siteConfig } from '../data/content';
 
 export const Testimonials: React.FC = () => {
+  useEffect(() => {
+    // Garante inicialização do widget Elfsight mesmo com navegação SPA / re-render
+    const scriptId = 'elfsight-platform-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://elfsightcdn.com/platform.js';
+      script.async = true;
+      document.body.appendChild(script);
+    } else if ((window as any).eapps && typeof (window as any).eapps.initialize === 'function') {
+      (window as any).eapps.initialize();
+    }
+  }, []);
+
   return (
     <section id="avaliacoes" className="py-24 lg:py-32 bg-white relative overflow-hidden border-t border-[#EFE8E2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
           <div className="flex items-center justify-center gap-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#A6845B]">
-              Avaliações & Experiências
+              Avaliações Oficiais do Google
             </p>
             <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]" />
           </div>
@@ -22,81 +35,42 @@ export const Testimonials: React.FC = () => {
             O que nossas clientes dizem sobre a <span className="font-serif italic text-[#A6845B]">experiência</span>
           </h2>
 
-          <div className="inline-flex items-center gap-2.5 p-2 px-5 rounded-full bg-[#1B1514] text-white shadow-sm">
-            <div className="flex text-[#DFC4A2] text-sm">
-              ★★★★★
-            </div>
-            <span className="text-xs font-semibold text-white/90">
-              Nota 5.0 no Google • 100% de satisfação
-            </span>
-          </div>
-        </div>
-
-        {/* Testimonials Grid with Client Avatars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonialsData.map((t, index) => (
-            <motion.div
-              key={t.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.5 }}
-              className="bg-[#FAF7F4] p-6 rounded-2xl border border-[#EFE8E2] hover:border-[#C5A880]/60 transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#EFE8E2]">
-                  <div className="flex items-center gap-1 text-[#A6845B]">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#A6845B] text-[#A6845B]" />
-                    ))}
-                  </div>
-                  <Quote className="w-4 h-4 text-[#A6845B]/40" />
-                </div>
-
-                <p className="text-xs sm:text-sm text-[#6E6764] font-light leading-relaxed mb-6 italic">
-                  "{t.comment}"
-                </p>
-              </div>
-
-              {/* Client Profile */}
-              <div className="pt-4 border-t border-[#EFE8E2] flex items-center gap-3">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#C5A880] shrink-0">
-                  {t.avatarUrl ? (
-                    <img
-                      src={t.avatarUrl}
-                      alt={t.name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-[#1B1514] text-[#DFC4A2] font-serif font-bold text-xs flex items-center justify-center">
-                      {t.name[0]}
-                    </div>
-                  )}
-                </div>
-
-                <div>
-                  <p className="text-xs font-bold text-[#1B1514]">{t.name}</p>
-                  <p className="text-[10px] text-[#A6845B] font-medium">{t.service}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Instagram Callout */}
-        <div className="mt-16 text-center">
-          <p className="text-xs sm:text-sm text-[#6E6764] mb-4 font-light">
-            Acompanhe transformações diárias e feedbacks em tempo real no nosso perfil oficial:
+          <p className="text-[#6E6764] text-base font-light">
+            Depoimentos 100% autênticos e sincronizados diretamente da nossa página oficial do Google Meu Negócio.
           </p>
+        </div>
+
+        {/* Elfsight Official Google Reviews Live Widget */}
+        <div className="min-h-[250px] w-full">
+          <div
+            className="elfsight-app-c5e4fa2a-10e0-4857-b292-b8c28f042fa3"
+            data-elfsight-app-lazy
+          />
+        </div>
+
+        {/* Dual Actions: Google Maps Profile & Instagram */}
+        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+          <a
+            href={siteConfig.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#1B1514] hover:bg-[#A6845B] shadow-md transition-all active:scale-95"
+          >
+            <div className="w-4 h-4 rounded-full bg-white text-[#1B1514] flex items-center justify-center font-bold text-[10px]">
+              G
+            </div>
+            <span>Ver Perfil Oficial no Google</span>
+            <ExternalLink className="w-3.5 h-3.5 text-[#DFC4A2]" />
+          </a>
+
           <a
             href={siteConfig.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1514] bg-[#FAF7F4] hover:bg-[#EFE8E2] border border-[#EFE8E2] transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1514] bg-[#FAF7F4] hover:bg-[#EFE8E2] border border-[#EFE8E2] transition-all"
           >
             <MessageCircle className="w-4 h-4 text-[#A6845B]" />
-            <span>Siga {siteConfig.instagramHandle} no Instagram</span>
+            <span>Acompanhar no Instagram {siteConfig.instagramHandle}</span>
           </a>
         </div>
 
