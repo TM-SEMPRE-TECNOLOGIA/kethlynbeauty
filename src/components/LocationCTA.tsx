@@ -130,17 +130,19 @@ export const LocationCTA: React.FC = () => {
                 />
               </div>
 
-              <div>
+              <div className="pt-1">
                 <a
                   href={siteConfig.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-[#1B1514] bg-[#FAF7F4] hover:bg-[#EFE8E2] transition-colors border border-[#EFE8E2]"
+                  className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl text-xs font-bold uppercase tracking-wider text-white bg-[#1B1514] hover:bg-[#A6845B] transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 group border border-[#C5A880]/30"
                 >
-                  <Navigation className="w-4 h-4 text-[#A6845B]" />
+                  <Navigation className="w-4 h-4 text-[#DFC4A2] group-hover:rotate-12 transition-transform shrink-0" />
                   <span>Traçar Rota no Google Maps</span>
+                  <ArrowRight className="w-4 h-4 text-[#DFC4A2] group-hover:translate-x-1 transition-transform shrink-0" />
                 </a>
               </div>
+
 
             </div>
 
